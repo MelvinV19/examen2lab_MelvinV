@@ -7,18 +7,29 @@ public class Astronauta implements Serializable {
     String nacionalidad;
     double sueldo;
     String experiencia;
+    String sexo;
     double peso;
 
     public Astronauta() {
     }
 
-    public Astronauta(String nombre, String nacionalidad, double sueldo, String experiencia, double peso) {
+    public Astronauta(String nombre, String nacionalidad, double sueldo, String experiencia,String sexo, double peso) {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
         this.sueldo = sueldo;
         this.experiencia = experiencia;
         this.peso = peso;
+        this.sexo=sexo;
     }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
 
     public String getNombre() {
         return nombre;
