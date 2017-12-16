@@ -16,6 +16,10 @@ public class naveTripulada extends naveEspacial implements Serializable{
         this.lugar = lugar;
     }
 
+    naveTripulada() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getLugar() {
         return lugar;
     }
@@ -30,6 +34,20 @@ public class naveTripulada extends naveEspacial implements Serializable{
 
     public void setLista(ArrayList<Astronauta> lista) {
         this.lista = lista;
+    }
+
+    @Override
+    public double[] calcularTiempo(double d, double v) {
+       double []tiempo=new double[2];
+       double peso=0;
+        for (Astronauta a : lista) {
+            peso+=a.getPeso();
+        }
+        double ida= d/ (v*(Math.pow(peso, 2)/100));
+        double vuelta=d/(v*(peso/100));
+        tiempo[0]=ida;
+        tiempo[1]=vuelta;
+       return tiempo;
     }
     
 }

@@ -32,5 +32,15 @@ public class sondaEspacial extends naveEspacial implements Serializable{
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    @Override
+    public double[] calcularTiempo(double d, double v) {
+        double []tiempo=new double[2];
+        double tiempoida=(d/v);
+        double tiemporegreso=(9.8*v);
+        tiempo[0]=tiempoida;
+        tiempo[1]=tiemporegreso;
+        return tiempo;
+    }
    
 }
